@@ -234,6 +234,7 @@ package json;
 		int fd;
 		int res;
 		string s, t;
+        util::String utilStringS;
 
 		/* Open the JSON-formatted text file */
 		fd = $fopen(file_path, "r");
@@ -249,7 +250,9 @@ package json;
 		end
 		$fclose(fd);
 
-		return LoadS(util::String::new(s));
+        utilStringS = new(s);
+        return LoadS(utilStringS);
+	  //return LoadS(util::String::new(s));
 	endfunction
 
 
